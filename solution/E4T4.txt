@@ -1,0 +1,19 @@
+
+# What additional architectural change can be made to reduce the internet facing attack surface of the web application instance.
+- Adding AWS WAF will help us with OWASP Top 10 security risks
+- Improve policies and introduce keys rotation
+- Centralized CloudTrail logs
+- Adding hardened bastion host
+- Create notification alerts
+- MFA as a requirement for the privileged business user accessing our secret recipes.
+
+------
+
+# Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.
+No, IAM restrictive permission should aways be in place. That's like not putting a password/scanner on your phone, because it will not leave your pocket without your knowing.
+
+# Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+It will remain unencrypted.
+
+# What would happen if the original cloud formation templates are applied to this environment.
+We would lose our changes that we have made for better or worse. In our case this would definitely be for worse.

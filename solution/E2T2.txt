@@ -1,0 +1,30 @@
+Some inspector findings:
+Many ingress problems - we should restrict access to the instance
+The instance support password authentication - makes brute-force attack possible
+There are no password complexity rules
+We can log in the instance as a root user
+
+Some security hub findings:
+MFA missing on account level
+IAM policies problems
+Ingress problems
+VPC configuration problems
+Log problems (CloudTrail/VPC flow)
+
+Some config findings:
+IAM policies problems
+Lack of encryption
+Lack of https - I see in the configuration we only open port 80, we should configure https also
+Log problems
+
+
+
+
+
+
+
+
+
+
+
+

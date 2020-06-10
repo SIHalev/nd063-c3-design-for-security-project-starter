@@ -1,0 +1,33 @@
+# Identify tools that will allow you to do the following:
+
+## Scan infrastructure as code templates
+https://cloudsploit.com/
+https://www.cloudconformity.com/solutions/aws/cloudformation-template-scanner.html
+https://github.com/Skyscanner/cfripper/
+
+### Example vulnerability
+IAMRoles are not following the least privilege principal
+Lack of encryption
+
+##Scan AMI’s or containers for OS vulnerabilities
+OS vulnerabilities can't be scan with AWS Inspector
+Container
+https://github.com/anchore/anchore-engine
+https://github.com/quay/clair
+
+### Example vulnerability
+Outdated OS version
+Dockerfile does not contain any HEALTHCHECK instructions
+Vulnerability found in package - mount (CVE-2016-2779 - https://security-tracker.debian.org/tracker/CVE-2016-2779)
+
+##Scan an AWS environment for cloud configuration vulnerabilities
+AWS Config
+AWS Security Hub
+AWS Inspector
+AWS System Manager
+
+### Example vulnerability
+MFA missing
+IAM policies problems
+Ingress problems
+VPC configuration problems

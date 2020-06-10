@@ -1,0 +1,16 @@
+Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
+
+# Poor practice 1
+The first major problem that I see is that the s3 buckets access:
+- They are not following the principle of the least privileged
+- The users does not go through an IAM role and policy
+- They appear to be directly publicly accessible
+
+Few bad situations:
+- Everyone from the internet can access them, so if a security security leak occurs everyone can get them without restrictions
+- What will happens if we want to revoke an access of single privileged business user, this is hard in our current setup
+
+# Poor practice 2
+The second major problem that I see is the web service instance ingress rules, or the lack of them. This could make our system vulnerable to an attacker.
+I would probably don't want to direct access to the instance, only parts of the system should have access to it.
+If we need access to the web service instance, maybe we only go through a hardened bastion instance.
