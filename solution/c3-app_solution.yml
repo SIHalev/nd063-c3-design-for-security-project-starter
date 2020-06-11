@@ -92,12 +92,12 @@ Resources:
       GroupDescription: "Security group for this application server"
       SecurityGroupEgress:
       - IpProtocol: -1
-        CidrIp: 0.0.0.0/0
+        CidrIp: 10.192.0.0/16
       SecurityGroupIngress:
       - IpProtocol: tcp
         FromPort: 80
         ToPort: 80
-        CidrIp: 0.0.0.0/0
+        CidrIp: 10.192.0.0/16
       VpcId: !ImportValue VpcId
 
   AppEIP:
